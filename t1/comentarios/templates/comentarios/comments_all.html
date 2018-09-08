@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Comentarios</title>
+</head>
+<body>
+    {% if comentarios_lista %}
+        <ul>
+            {% for comentario in comentarios_lista %}
+            <li>
+                <a href="/comentarios/"{{ comentario.id }}/">{{ comentario.contenido }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+    <p>No hay comentarios</p>
+    {% endif %}
+<form action="comentar/" method="POST" id="usrform">
+  <textarea rows="4" cols="30" name="comment" form="usrform">Escribe un comentario</textarea>
+    <input type="hidden" name="next" value="{{ request.path }}">
+  <input type="submit">
+</form>
+<br>
+</body>
+</html>
