@@ -25,9 +25,14 @@ def comments_all(request):
 
 def comentar(request):
     comentario = Comentario()
+    #contenido
     contenido = request.POST['comment']
     comentario.contenido = contenido
+    #fecha
     comentario.fecha =datetime.datetime.now()
+    #ip
+    ip = request.environ['REMOTE_ADDR']
+    comentario.ip = ip
     comentario.save()
     next = request.POST.get('next', '/')
     return HttpResponseRedirect(next)

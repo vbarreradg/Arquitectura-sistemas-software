@@ -10,6 +10,8 @@
             {% for comentario in comentarios_lista %}
             <li>
                 <p>{{ comentario.contenido }}</p>
+                <p>{{ comentario.fecha }}</p>
+                <p>{{ comentario.ip }}</p>
             </li>
             {% endfor %}
         </ul>
