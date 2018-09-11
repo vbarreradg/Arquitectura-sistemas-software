@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <style>
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
     <meta charset="UTF-8">
     <center>
       <title>Comentarios</title>
@@ -27,8 +32,9 @@
     {% else %}
     <p>No hay comentarios</p>
     {% endif %}
+    <br>
 <form action="comentar/" method="POST" id="usrform">
-  <textarea rows="4" cols="30" name="comment" form="usrform">Escribe un comentario</textarea>
+  <textarea rows="4" cols="100" name="comment" form="usrform">Escribe un comentario</textarea>
     <input type="hidden" name="next" value="{{ request.path }}">
   <input type="submit">
 </form>
