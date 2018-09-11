@@ -24,9 +24,11 @@ table, th, td {
             </tr>
             {% for comentario in comentarios_lista %}
             <tr>
-              <td>{{ comentario.contenido }}</td>
-              <td>{{ comentario.fecha }}</td>
-              <td>{{ comentario.ip }}</td>
+              {% if comentario.ip%}
+                <td>{{ comentario.contenido }}</td>
+                <td>{{ comentario.fecha }}</td>
+                <td>{{ comentario.ip }}</td>
+              {% endif %}
             </tr>
             {% endfor %}
         </ul>
@@ -36,9 +38,11 @@ table, th, td {
     <br>
 <form action="comentar/" method="POST" id="usrform">
   <textarea rows="4" cols="100" name="comment" form="usrform">Escribe un comentario</textarea>
+  <br>
     <input type="hidden" name="next" value="{{ request.path }}">
   <input type="submit">
 </form>
+<br>
 <br>
 </center>
 </body>
