@@ -2,17 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Comentarios</title>
+    <center>
+      <title>Comentarios</title>
+    </center>
 </head>
 <body>
+    <center>
     {% if comentarios_lista %}
         <ul>
+          <table style="width:100%">
+            <tr>
+              <th>Comentario</th>
+              <th>Fecha</th>
+              <th>Dirección IP</th>
+            </tr>
             {% for comentario in comentarios_lista %}
-            <li>
-                <p>{{ comentario.contenido }}</p>
-                <p>{{ comentario.fecha }}</p>
-                <p>{{ comentario.ip }}</p>
-            </li>
+            <tr>
+              <td>{{ comentario.contenido }}</td>
+              <td>{{ comentario.fecha }}</td>
+              <td>{{ comentario.ip }}</td>
+            </tr>
             {% endfor %}
         </ul>
     {% else %}
@@ -24,5 +33,6 @@
   <input type="submit">
 </form>
 <br>
+</center>
 </body>
 </html>
