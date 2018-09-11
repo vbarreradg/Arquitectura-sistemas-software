@@ -8,9 +8,7 @@
     {% if comentarios_lista %}
         <ul>
             {% for comentario in comentarios_lista %}
-            <li>
                 <a href="/comentarios/"{{ comentario.id }}/">{{ comentario.contenido }}</a>
-            </li>
             {% endfor %}
         </ul>
     {% else %}
