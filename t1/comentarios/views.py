@@ -32,7 +32,7 @@ def comentar(request):
     comentario.fecha =datetime.datetime.now()
     #ip
     ip = request.environ['REMOTE_ADDR']
-    comentario.ip = ip
+    comentario.ip = str(ip)
     comentario.save()
     next = request.POST.get('next', '/')
     return HttpResponseRedirect(next)
